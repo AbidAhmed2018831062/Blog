@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 style="font-family: 'Libre Bodoni', serif;">Welcome to Abid Blogs</h1>
+    </header>
+    <main>
+        <div class="cona">
+            <div class="form">
+                <div class="hey">
+                <label for="title">Id:</label><br>
+              <input required type="text" id="title" name="title" value="Hey Your id is:<%=article._id%>"><br>
+            </div>
+            <div class="hey">
+              <label for="des">Title</label><br>
+              <input required type="text" id="des" name="des" value="Hey Your Title is:<%=article.title%>">
+              </div>
+              <div class="hey">
+                <label for="mark">Description</label><br>
+                <input  required type="text" id="mark" name="mark" value="Hey Your Description is:<%=article.des%>">
+                </div>
+                </div>
+          
+        </div>
+        </div>
+    </main>
+</body>
+</html>
