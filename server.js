@@ -1,8 +1,9 @@
-
 const express=require("express");
 const mongoose=require("mongoose");
 const schme=require("./Database/schema");
 const article=require("./routes/article");
+const multer=require("multer");
+const multer1=require("./routes/fileUpload");
 const app=express();
 
 const art=new mongoose.model("Article",schme);
@@ -22,10 +23,10 @@ await res.render("index",{article:article1});
 
 
 
-app.post("/",async(req,res)=>{
-    console.log("Hello");
+app.post("/",multer1.array("avatar",3),async(req,res)=>{
+    console.log(req.body);
 
-    const showDes=req.body.des.substring(0,400);
+    const showDes=req.body.des.substr(0,400);
     const demoDes=showDes+"...";
    // console.log(demoDes);
     const a = new art({
@@ -41,5 +42,18 @@ if(d)
     res.redirect(`/article/${d._id}`);
 }
 });
-
+app.use((err,req,res,next)=>{
+    if(err){
+    if(err instanceof multer.MulterError){
+        console.log(err);
+        res.status(500).send(err.message);
+    }
+    
+    else{
+        res.status(500).send(err.message);
+    }
+}
+else
+res.send("Successful")
+});
 app.listen(3000,()=>console.log("listening"));
