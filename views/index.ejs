@@ -20,29 +20,30 @@
         <a href="/article/new" style="text-decoration:none; color:white;"> New Article</a> 
     </button> 
 </div>
-<div class="articles">
+<div class="fle-1">
     <% article.forEach(e=>{ %>
-        <div class="article" style="width:100%;">
-        <div class="same">
-            <h3><%=e.title%></h3>
-            <span><%=e.date.toLocaleString()%></span>
-            <p><%=e.demodes%></p>
-</div> 
-<div class="buttons">
-    <button class="read">
-        <a href="/article/<%=e._id%>">Read More</a>
-    </button>
-    <button class="edit">
-        <a href="/article/new">Edit</a>
-    </button>
-    <button class="delete">
-        Delete
-    </button>
-</div> 
-</div>
-<% }) %>
+            <div class="items">
+                <img src="http://127.0.0.1:8887/<%=e.img%>" class="i-3">
+                <div class="i-2">
+                    <h3><%=e.title%></h3>
+                    <p><%=e.des%></p>
+                    <div class="buttons">
+                        <button class="read">
+                            <a href="/article/<%=e._id%>">Read More</a>
+                        </button>
+                        <button class="edit">
+                            <a href="/article/new">Edit</a>
+                        </button>
+                        <button class="delete">
+                            Delete
+                        </button>
+                    </div> 
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+
 </div>  
-        </div>
     </main>
 </body>
 </html>

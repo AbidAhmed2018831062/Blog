@@ -4,6 +4,7 @@ const schme=require("./Database/schema");
 const article=require("./routes/article");
 const multer=require("multer");
 const multer1=require("./routes/fileUpload");
+const { _id } = require("./routes/fileUpload");
 const app=express();
 
 const art=new mongoose.model("Article",schme);
@@ -24,7 +25,9 @@ await res.render("index",{article:article1});
 
 
 app.post("/",multer1.array("avatar",3),async(req,res)=>{
-    console.log(req.body);
+   
+   
+    console.log(multer1._id+"Abid");
 
     const showDes=req.body.des.substr(0,400);
     const demoDes=showDes+"...";
@@ -34,8 +37,9 @@ app.post("/",multer1.array("avatar",3),async(req,res)=>{
     des:req.body.des,
     mark:req.body.mark,
     demodes:demoDes,
+    img:multer1._id,
 });
-console.log(a);
+//console.log(a);
 const d=await a.save();
 if(d)
 {

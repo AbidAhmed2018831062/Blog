@@ -2,9 +2,9 @@ const { diskStorage } = require("multer");
 const multer = require("multer");
 const path = require("path");
 
+var up;
 
-
-
+let  _id;
 const uplo="G:/ProjectsExpress/Blog/uploads";
 
 const storage=multer.diskStorage({
@@ -12,9 +12,11 @@ const storage=multer.diskStorage({
         cb(null,uplo);
     },
     filename:(req,file,cb)=>{
-        console.log(req);
+        //console.log(req);
         const ext=path.extname(file.originalname);
         const fileNa=file.originalname.replace(ext,"").split(" ").join("-");
+        up._id=fileNa+ext;
+        console.log(_id);
         cb(null,fileNa+ext);
 
 
@@ -22,11 +24,12 @@ const storage=multer.diskStorage({
     }
 })
 
-var up=multer({
+ up=multer({
     storage:storage,
     limits:100000,
     fileFilter:(req,file,cb)=>{
        up.hey=file;
+       up._id=_id;
         if(file.fieldname==="avatar")
         {
             if(file.mimetype==="image/jpg"||file.mimetype==="image/jpeg"||file.mimetype==="image/png")
