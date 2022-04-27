@@ -26,7 +26,7 @@
                 <img src="http://127.0.0.1:8887/<%=e.img%>" class="i-3">
                 <div class="i-2">
                     <h3><%=e.title%></h3>
-                    <p><%=e.des%></p>
+                    <p><%=e.demodes%></p>
                     <div class="buttons">
                         <button class="read">
                             <a href="/article/<%=e._id%>">Read More</a>
@@ -35,7 +35,7 @@
                             <a href="/article/new">Edit</a>
                         </button>
                         <button class="delete">
-                            Delete
+                            <a href="/article/delete?_id=<%=e._id%>" data-method="delete">Delete</a>
                         </button>
                     </div> 
                     </div>
