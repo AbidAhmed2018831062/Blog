@@ -5,31 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="/css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%=article.title%></title>
 </head>
 <body>
-    <header>
-        <h1 style="font-family: 'Libre Bodoni', serif;">Welcome to Abid Blogs</h1>
-    </header>
     <main>
         <div class="cona">
-            <div class="form">
-                <div class="hey">
-                <label for="title">Id:</label><br>
-              <input required type="text" id="title" name="title" value="Hey Your id is:<%=article._id%>"><br>
+            <div class="mainPosts">
+             <h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:150%"><%=article.title%> </h3>
+             <span style="color:grey; margin-top:5px; display:block;">Published at <%=article.date%></span>
+             <span style="display:block; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;margin-top:20px;">Author: Abid Ahmed</span>
+             <hr style="height:4px; margin-top:10px; margin-bottom:10px;background-color:grey;">
+             <img style="width: 100%;" src="http://127.0.0.1:8887/<%=article.img%>">
+             <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;width:100%; display: block; margin-top: 20px;"><%=article.des%></p>
             </div>
-            <div class="hey">
-              <label for="des">Title</label><br>
-              <input required type="text" id="des" name="des" value="Hey Your Title is:<%=article.title%>">
-              </div>
-              <div class="hey">
-                <label for="mark">Description</label><br>
-                <input  required type="text" id="mark" name="mark" value="Hey Your Description is:<%=article.des%>">
+            <div class="sidePosts">
+                <h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:150%; margin-bottom: 20px;" >Recent Posts</h3>
+                <% recent.forEach(e=>{ %>
+                <div class="posts" id="<%=e._id%>">
+                    <a href="/article/<%=e._id%>">
+                    <img src="http://127.0.0.1:8887/<%=e.img%>">
+                    <h4><%=e.title%></h4>
+                </a>
                 </div>
-                </div>
+               <% })%>
+            </div>
+          </div>
           
-        </div>
-        </div>
     </main>
+    
 </body>
 </html>

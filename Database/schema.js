@@ -15,6 +15,10 @@ const schema=mongoose.Schema({
         type:String,
         required:true
     },
+    month:{
+      type:String,
+      required:true
+    },
     img:{
         type:String,
         default:"12456",

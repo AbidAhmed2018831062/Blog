@@ -133,6 +133,10 @@ border: none;
 
     width:90%;
 }
+.cona{
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
         .buttons .delete{
             background-color: red;
             margin:10px 5px;
@@ -168,4 +172,51 @@ border: none;
             }
             .i-2 h3 {
                 padding-bottom: 20px;
+            }
+
+.mainPosts p{
+    display:inline-block;
+}
+.sidePosts p{
+    display:inline-block;
+}
+.posts{
+    width:100%;
+    margin-top: 20px;
+    text-align: center;
+}
+.posts img{
+    margin-top: 5px;
+}
+.posts h4 img p{
+    display:inline-block;
+   
+
+}
+.posts h4{
+    width:55%;
+    margin-top: -10px;
+    display: inline-block;
+    color:black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.posts img{
+    width:25%;
+    height:50px;
+    margin-top: 0%;
+}
+   
+            .mainPosts{
+                display:inline-block;
+                width:50%;
+                margin-left: 25%;
+                margin-top: 0%;
+            }
+            
+            .sidePosts{
+                float: right;
+                display:inline-block;
+                width:20%;
+                margin-left: 5%;
+                
             }

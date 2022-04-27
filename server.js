@@ -14,7 +14,9 @@ mongoose.connect("mongodb://localhost/article",{
 }).then(()=>console.log("Connection successful")).catch(err=>console.log(err));
 app.use(express.urlencoded({extended:false}))
 app.use("/article",article);
-app.use(express.static(__dirname+'/public'))
+app.use(express.static(__dirname+'/public'));
+
+app.use("/js",express.static(__dirname+'/public/js'))
 app.get("/",async(req,res)=>{
   const article1=await art.find();
     //console.log(article1);
@@ -28,7 +30,8 @@ app.post("/",multer1.array("avatar",3),async(req,res)=>{
    
    
     console.log(multer1._id+"Abid");
-
+    let date=new Date();
+    let month=date.getMonth();
     const showDes=req.body.des.substr(0,400);
     const demoDes=showDes+"...";
    // console.log(demoDes);
@@ -38,6 +41,7 @@ app.post("/",multer1.array("avatar",3),async(req,res)=>{
     mark:req.body.mark,
     demodes:demoDes,
     img:multer1._id,
+    month:month
 });
 //console.log(a);
 const d=await a.save();
