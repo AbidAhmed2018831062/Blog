@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=article.title%></title>
+</head>
+<body>
+    <headers>
+        <h1><%=article.title%></h1>
+    </headers>
+    <div class="con">
+        <div class="form">
+            <form action="/article/editArticle?_id=<%=article._id%>" method="post">
+            <div class="hey">
+            <label for="title">Title:</label><br>
+          <input required type="text" id="title" name="title" value="<%=article._id%>"><br>
+        </div>
+        <div class="hey">
+          <label for="des">Des</label><br>
+          <input required type="text" id="des" name="des" value="<%=article.title%>">
+          </div>
+          <div class="hey">
+            <label for="mark">Mark</label><br>
+            <input  required type="text" id="mark" name="mark" value="<%=article.mark%>">
+            </div>
+            <div class="button">
+                <button class="cancel">
+                    <a href="/">Cancel</a>
+                </button>
+                <button class="submit" type="submit">
+                    Edit
+                </button>
+            </form>
+            </div>
+
+    </div>
+    </div>
+</main>
+</body>
+</html>
